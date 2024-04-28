@@ -7,7 +7,7 @@ const Component1 = () => {
 }
 
 Component1.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   description: PropTypes.string,
   count: PropTypes.number,
 };
