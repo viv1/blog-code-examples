@@ -32,7 +32,7 @@ module.exports = {
     // new BundleAnalyzerPlugin(),
   ],
   optimization: {
-    usedExports: false,
-    sideEffects: false,
+    usedExports: true,
+    sideEffects: true,
   }
 };
