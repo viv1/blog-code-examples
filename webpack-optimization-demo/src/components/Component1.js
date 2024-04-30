@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 
 const Component1 = () => {
-  return <div>Component 1</div>;
+  let x = _.join(['C', 'o', 'm', 'p', 'o', 'n', 'e', 'n', 't', ' 1'], '');
+  return <div>{x}</div>;
 }
 
 Component1.propTypes = {
