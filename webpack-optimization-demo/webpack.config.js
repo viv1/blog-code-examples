@@ -4,7 +4,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-  mode: 'none',
+  mode: 'production',
   entry: {
     main: { import: "./src/index.js", dependOn: "shared" },
     newindex: { import: "./src/newindex.js", dependOn: "shared" },
