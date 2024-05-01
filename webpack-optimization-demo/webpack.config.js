@@ -30,5 +30,8 @@ module.exports = {
     new webpack.ProvidePlugin({
       process: 'process/browser',
     }),
-  ]
+  ],
+  optimization: {
+    usedExports: true,
+  },
 };
