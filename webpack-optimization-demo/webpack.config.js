@@ -1,4 +1,5 @@
 const path = require('path');
+const CompressionPlugin = require('compression-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
@@ -42,6 +43,9 @@ module.exports = {
     // fix "process is not defined" error:
     new webpack.ProvidePlugin({
       process: 'process/browser',
+    }),
+    new CompressionPlugin({
+      algorithm: 'gzip'
     }),
   ],
   optimization: {
