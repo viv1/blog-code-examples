@@ -6,7 +6,13 @@ const webpack = require('webpack');
 module.exports = {
   mode: 'none',
   entry: {
-    main: { import: "./src/index.js" }
+    main: { import: "./src/index.js", dependOn: "shared" },
+    newindex: { import: "./src/newindex.js", dependOn: "shared" },
+    shared: "lodash/join",
+  },
+  output: {
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
@@ -26,6 +32,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./src/index.html",
+      chunks: ["main", "shared"],
+    }),
+    new HtmlWebpackPlugin({
+      filename: "newindex/index.html",
+      template: "./src/index.html",
+      chunks: ["newindex", "shared"],
     }),
     // fix "process is not defined" error:
     new webpack.ProvidePlugin({
@@ -36,5 +48,8 @@ module.exports = {
     usedExports: true,
     minimize: true,
     minimizer: [new TerserPlugin()],
+    splitChunks: {
+      chunks: 'all',
+    },
   },
 };
