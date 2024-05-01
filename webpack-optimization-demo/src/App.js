@@ -1,7 +1,8 @@
 import React, { useState, lazy } from 'react';
 import Component1 from './components/Component1';
-import Component2 from './components/Component2';
 import unUsedComponent from './components/UnUsedComponent';
+
+const Component2 = lazy(() => import('./components/Component2'));
 
 const App = () => {
   const [showComponent2, setShowComponent2] = useState(false);
