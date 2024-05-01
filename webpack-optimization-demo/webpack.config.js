@@ -1,4 +1,5 @@
 const path = require('path');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CompressionPlugin = require('compression-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -47,6 +48,7 @@ module.exports = {
     new CompressionPlugin({
       algorithm: 'gzip'
     }),
+    new BundleAnalyzerPlugin(),
   ],
   optimization: {
     usedExports: true,
