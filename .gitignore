@@ -1,2 +1,4 @@
 venv
 django_join/db.sqlite3
+newsletter-functions-cloudflare/node_module
+newsletter-functions-cloudflare/wewake-newsletter/node_modules
